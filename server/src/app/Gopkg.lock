@@ -14,6 +14,18 @@
   version = "v0.0.1"
 
 [[projects]]
+  name = "github.com/graphql-go/graphql"
+  packages = [".","gqlerrors","language/ast","language/kinds","language/lexer","language/location","language/parser","language/printer","language/source","language/typeInfo","language/visitor"]
+  revision = "2b0b7340d2285b861482047fbf5de0488e021bea"
+  version = "v0.7.8"
+
+[[projects]]
+  name = "github.com/graphql-go/handler"
+  packages = ["."]
+  revision = "c1267356e6539d975e83bbea383c2bbb861dce5b"
+  version = "v0.2.3"
+
+[[projects]]
   branch = "master"
   name = "github.com/xdg/scram"
   packages = ["."]
@@ -52,6 +64,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b6ef47b941ba700bd70e02a36c30a91a10679da00b2d8039b0ec29e41f5d8c18"
+  inputs-digest = "1c35068a50d4bd03cd876a8cd20108fc933799e8b07725ac2bbeecfdf12185d4"
   solver-name = "gps-cdcl"
   solver-version = 1
