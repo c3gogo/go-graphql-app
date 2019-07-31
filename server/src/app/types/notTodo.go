@@ -7,11 +7,11 @@ import (
 var NotTodo = graphql.NewObject(graphql.ObjectConfig {
 	Name: "NotTodo",
 	Fields: graphql.Fields{
-		"name": &graphql.Fields{
+		"name": &graphql.Field{
 			Type: graphql.String,
 		},
 		"description": &graphql.Field{
 			Type: graphql.String,
-		}
-	}
+		},
+	},
 })

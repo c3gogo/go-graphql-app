@@ -8,18 +8,17 @@ import (
 	"github.com/graphql-go/handler"
 
 	"app/queries"
-	"app/mutations"
 )
 
 var schema, _ = graphql.NewSchema(graphql.SchemaConfig{
 	Query: queries.RootQuery,
-	Mutation: mutations.RootMutation,
 })
 
 func main() {
 	h := handler.New(&handler.Config{
 		Schema: &schema,
 		Pretty: true,
+		GraphiQL: true,
 	})
 
 	http.Handle("/graphql", disableCors(h))
@@ -36,7 +35,7 @@ func disableCors(h http.Handler) http.Handler {
 
 		if r.Method == "OPTIONS" {
 			w.Header().Set("Access-Control-Max-Age", "86400")
-			w.writeHeader(http.StatusOK)
+			w.WriteHeader(http.StatusOK)
 			return
 		}
 		h.ServeHTTP(w, r)
