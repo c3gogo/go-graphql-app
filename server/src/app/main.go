@@ -7,17 +7,19 @@ import (
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
 
+	"app/mutations"
 	"app/queries"
 )
 
 var schema, _ = graphql.NewSchema(graphql.SchemaConfig{
-	Query: queries.RootQuery,
+	Query:    queries.RootQuery,
+	Mutation: mutations.RootMutation,
 })
 
 func main() {
 	h := handler.New(&handler.Config{
-		Schema: &schema,
-		Pretty: true,
+		Schema:   &schema,
+		Pretty:   true,
 		GraphiQL: true,
 	})
 
